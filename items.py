@@ -17,7 +17,7 @@ class Potion: # Класс зелье
         self.skill=random.choice(['poison','heal'])
         if self.skill=='poison':
             self.effect=-random.randint(10,30)  
-            self.description="Яд:Наносит урон"
+            self.description="Яд:Наносит урон!"
         else:
             self.effect=random.randint(10, 30)   
             self.description="Исцеление:Восстанавливает здоровье"
