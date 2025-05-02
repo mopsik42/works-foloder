@@ -23,7 +23,7 @@ class Dnevnik:
     def __str__(self):
         return "OK"
 
-
+x=10
 chel = Pupil("Dima")
 dnevnik = Dnevnik()
 dnevnik.owner = chel.name
