@@ -4,7 +4,7 @@ class Pupil:
 
 class Dnevnik:
     def __init__(self):
-        self.owner = ""
+        self.__owner = ""
         self.monthData={}
 
     @property
@@ -13,4 +13,21 @@ class Dnevnik:
     
     @owner.setter
     def owner(self, newOwner):
-        self.owner  = newOwner
+        self.__owner  = newOwner
+    
+    def add(self,subject:str, value:int):
+        if subject in self.monthData:
+            print(f'{subject} есть в списке.')
+        else: self.monthData[subject] = value
+    
+    def __str__(self):
+        return "OK"
+
+
+chel = Pupil("Dima")
+dnevnik = Dnevnik()
+dnevnik.owner = chel.name
+dnevnik.add("История",0)
+dnevnik.add("Химия",3)
+dnevnik.add("Биология",3)
+print(dnevnik)
