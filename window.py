@@ -1,21 +1,16 @@
 import tkinter as tk
 from tkinter import messagebox
 
-def msg():
-    name = txt1.get()
-    sname = txt2.get()
-    messagebox.showerror("Title",f'пользователь {name} {sname}')
 
-wind=tk.Tk()
-wind.title("Моя программа")
-wind.geometry("500x500")
-tk.Label(wind,text="введите имя").pack()
-txt1 = tk.Entry(wind)
-txt1.pack()
-tk.Label(wind,text="введите фамилию").pack()
-txt2=tk.Entry(wind)
-txt2.pack()
-tk.Button(wind,text="tap",command=msg).pack(pady=5)
+root=tk.Tk()
+root.geometry('300x400')
+root.anchor='e'
+root.grid_columnconfigure(0,weight=1,minsize=100)
+root.grid_columnconfigure(1,weight=2,minsize=100)
+root.grid_columnconfigure(2,weight=1,minsize=150)
+tk.Label(root, text="Имя:",background="#320032").grid(row=0, column=0,columnspan=3,sticky="ew")
+tk.Entry(root,background="#005512").grid(row=1, column=1, padx=0, pady=5)
 
 
-wind.mainloop()
+
+root.mainloop()
