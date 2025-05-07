@@ -3,6 +3,7 @@ from tkinter import messagebox as msgbox
 
 form = tk.Tk()
 form.title("FormFrame")
+
 form.geometry("400x600")
 form.resizable(False, False) # не разрешаем изменять размер окна
 form.config(bg="#f0f0f0")   # цвет фона
