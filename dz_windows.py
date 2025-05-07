@@ -1,0 +1,14 @@
+import tkinter as tk
+from tkinter import messagebox
+root=tk.Tk() 
+root.geometry('700x700')
+tk.LabelFrame(root, text="Анкета ученика",background="#FF0000")
+tk.Label(root, text="Имя:",background="#00FF00").grid(row=0, column=2,sticky="ew")
+tk.Entry(root,background="#808080").grid(row=0, column=100, padx=0, pady=5)
+tk.Label(root, text="Фамилия:",background="#00FF00").grid(row=1, column=0,sticky="ew")
+tk.Entry(root,background="#808080").grid(row=1, column=100, padx=0, pady=5)
+tk.Label(root, text="Возраст:",background="#00FF00").grid(row=2, column=0,sticky="ew")
+tk.Entry(root,background="#808080").grid(row=2, column=100, padx=0, pady=5)
+tk.Label(root, text="Класс(номер,буква):",background="#00FF00").grid(row=3, column=0,sticky="ew")
+tk.Entry(root,background="#808080").grid(row=3, column=100, padx=0, pady=5)
+root.mainloop()
