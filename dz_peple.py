@@ -6,6 +6,10 @@ canvas=tk.Canvas(width=500, height=500, bg="black")
 
 canvas.create_oval(190,50,250,125, fill='beige', width=3) # Голова
 
+canvas.create_line(210,70,210,90, fill='black', width=3) # Лев глаз
+canvas.create_line(230,70,230,90, fill='black', width=3) # Прав глаз
+canvas.create_line(210,110,230,110, fill='black', width=3) # Рот
+
 canvas.create_rectangle(210,124,230,150, fill='beige',width=3) # Шея
 
 canvas.create_rectangle(180,145,260,190, fill='turquoise',width=3) # Вверх туловища
