@@ -16,58 +16,56 @@ width = 400
 height = 200
 screen = pygame.display.set_mode((width, height))
 
-# Шрифты
-font_city = pygame.font.Font(None, 36)
-font_temp = pygame.font.Font(None, 72)
-font_weather = pygame.font.Font(None, 28)
-
-# Цвета
-white = (255, 255, 255)
-black = (0, 0, 0)
-
-# Загружаю картинки
-sun_img = pygame.image.load("asets/sun.png").convert_alpha()
-rain_img = pygame.image.load("asets/rain.png").convert_alpha()
-cloud_img = pygame.image.load("asets/cloyd.png").convert_alpha()
-wind_img = pygame.image.load("asets/wind.png").convert_alpha()
-
-# Масштабирую картинки
-sun_img = pygame.transform.scale(sun_img, (150, 150))
-rain_img = pygame.transform.scale(rain_img, (150, 150))
-cloud_img = pygame.transform.scale(cloud_img, (150, 150))
-wind_img = pygame.transform.scale(wind_img, (150, 150))
-
-# Выбираю картинку по описанию
-if weather_desc == "ясно":
-    weather_image = sun_img
-elif weather_desc == "дождь":
-    weather_image = rain_img
-elif "облачно" in weather_desc:
-    weather_image = cloud_img
-elif "ветер" in weather_desc:
-    weather_image = wind_img
-else:
-    weather_image = None
-
-city_text = font_city.render(city_name.upper(), True, black)  
-if temperature > 20:
-    temp_color = (255, 0, 0) # Крас
-elif 0 <= temperature <= 20:
-    temp_color = (255, 255, 0) # Жёлт
-elif temperature < 0:
-    temp_color = (0, 0, 255)   # Син
-temp_text = font_temp.render(f"{temperature}°", True, temp_color)
-
-# Рендер текста
-city_text = font_city.render(city_name.upper(), True, black)  
-temp_text = font_temp.render(f"{temperature}°", True, temp_color)
-weather_text = font_weather.render(weather_desc, True, black)
-
-# Размеры виджета
-rect_width, rect_height = 380, 180
-border_radius = 20
-
 def wd_weather(x, y):
+    # Шрифты
+    font_city = pygame.font.Font(None, 36)
+    font_temp = pygame.font.Font(None, 72)
+    font_weather = pygame.font.Font(None, 28)
+
+    # Цвета
+    white = (255, 255, 255)
+    # Загружаю картинки
+    sun_img = pygame.image.load("asets/sun.png").convert_alpha()
+    rain_img = pygame.image.load("asets/rain.png").convert_alpha()
+    cloud_img = pygame.image.load("asets/cloyd.png").convert_alpha()
+    wind_img = pygame.image.load("asets/wind.png").convert_alpha()
+
+    # Масштабирую картинки
+    sun_img = pygame.transform.scale(sun_img, (150, 150))
+    rain_img = pygame.transform.scale(rain_img, (150, 150))
+    cloud_img = pygame.transform.scale(cloud_img, (150, 150))
+    wind_img = pygame.transform.scale(wind_img, (150, 150))
+
+    # Выбираю картинку по описанию
+    if weather_desc == "ясно":
+        weather_image = sun_img
+    elif weather_desc == "дождь":
+        weather_image = rain_img
+    elif "облачно" in weather_desc:
+        weather_image = cloud_img
+    elif "ветер" in weather_desc:
+        weather_image = wind_img
+    else:
+        weather_image = None
+
+    city_text = font_city.render(city_name.upper(), True, black)  
+    if temperature > 20:
+        temp_color = (255, 0, 0) # Крас
+    elif 0 <= temperature <= 20:
+        temp_color = (255, 255, 0) # Жёлт
+    elif temperature < 0:
+        temp_color = (0, 0, 255)   # Син
+    temp_text = font_temp.render(f"{temperature}°", True, temp_color)
+
+    # Рендер текста
+    city_text = font_city.render(city_name.upper(), True, black)  
+    temp_text = font_temp.render(f"{temperature}°", True, temp_color)
+    weather_text = font_weather.render(weather_desc, True, black)
+
+    # Размеры виджета
+    rect_width, rect_height = 380, 180
+    border_radius = 20
+
     # Рисую белый прямоугольник с закруглениями
     rect = pygame.Rect(x, y, rect_width, rect_height)
     pygame.draw.rect(screen, white, rect, border_radius=border_radius)
@@ -107,6 +105,7 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
+    black = (0, 0, 0)
     screen.fill(black)
 
     wd_weather(10, 10)
